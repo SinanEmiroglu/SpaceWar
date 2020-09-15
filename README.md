@@ -1,2 +1,2 @@
 # SpaceWar
- Ravio Code Challenge
+ Rovio Code Challenge
