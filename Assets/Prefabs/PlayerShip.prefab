@@ -65,9 +65,6 @@ MonoBehaviour:
   firePoint: {fileID: 878908042785456900}
   projectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
   moveSpeed: 20
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &2115977897619390443
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +166,9 @@ GameObject:
   - component: {fileID: 3646505763804789935}
   - component: {fileID: 6194820153113394806}
   - component: {fileID: 447722665970363625}
+  - component: {fileID: 3466239260304525244}
   - component: {fileID: 7783583299128505521}
+  - component: {fileID: 9207931894324016660}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -253,7 +252,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -271,6 +270,18 @@ PolygonCollider2D:
     - - {x: 0, y: 0.55}
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
+--- !u!114 &3466239260304525244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742832544788913527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a981cb65b18e834a951d159ef561509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7783583299128505521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +295,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &9207931894324016660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742832544788913527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00be6f29344c9204c863e2524c9090a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1 &6969476355487362697
 GameObject:
   m_ObjectHideFlags: 0

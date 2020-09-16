@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4907908269318919505}
   - component: {fileID: 5012491561318975638}
   - component: {fileID: 1703962826901123710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,3 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPoolSize: 50
+  damage: 1
+  Rigidbody2D: {fileID: 0}
