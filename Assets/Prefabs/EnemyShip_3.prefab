@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateInSecond: 1
-  ProjectilePrefab: {fileID: 6803231019145130951, guid: 54d7c29101b620a4e98403073a974660, type: 3}
 --- !u!114 &161574383968984811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  projectilePrefab: {fileID: 6803231019145130951, guid: 54d7c29101b620a4e98403073a974660, type: 3}
   firePoints:
   - {fileID: 6967378841372859348}
   - {fileID: 6453897983519710703}
@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 5624898986494268382}
   - component: {fileID: 4756016353996793743}
   - component: {fileID: 7185677305797498095}
+  - component: {fileID: -7650860942203180518}
   m_Layer: 8
   m_Name: EnemyShip_3
   m_TagString: Untagged
@@ -177,6 +178,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7650860942203180518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050530274538817575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ade779ee8e8c9c4ab77313c367e962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDieImpact:
+    m_PersistentCalls:
+      m_Calls: []
+  probability: 0.4
+  powerupPrefabs:
+  - {fileID: 4075411636019816448, guid: 384ea5354c3bbf44ea60ba624ce67323, type: 3}
+  - {fileID: 2496171909347935419, guid: 432842b0aba3a874eada840df32cc3a3, type: 3}
 --- !u!1 &2285641990892191334
 GameObject:
   m_ObjectHideFlags: 0

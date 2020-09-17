@@ -6,6 +6,7 @@ namespace SpaceWar
     public class WeaponProjectileLauncher : WeaponComponent
     {
         [SerializeField] private float moveSpeed = 20f;
+        [SerializeField] private Projectile projectilePrefab;
         [SerializeField] private Transform[] firePoints;
 
         protected override void WeaponFired()
@@ -13,8 +14,7 @@ namespace SpaceWar
             for (int i = 0; i < firePoints.Length; i++)
             {
                 Vector3 direction = firePoints[i].up;
-                Projectile prefab = _weapon.ProjectilePrefab;
-                Projectile projectile = prefab.Get<Projectile>(firePoints[i].position, Quaternion.Euler(direction));
+                Projectile projectile = projectilePrefab.Get<Projectile>(firePoints[i].position, Quaternion.Euler(direction));
                 projectile.Rigidbody2D.velocity = direction * moveSpeed;
             }
         }

@@ -7,8 +7,6 @@ namespace SpaceWar
     {
         [SerializeField] private float fireRateInSecond = 0.25f;
 
-        public Projectile ProjectilePrefab;
-
         public event Action OnFire = delegate { };
 
         private float _fireTimer = 0;
@@ -31,7 +29,7 @@ namespace SpaceWar
         private void Fire()
         {
             _fireTimer = 0f;
-            OnFire();
+            OnFire?.Invoke();
         }
     }
 }

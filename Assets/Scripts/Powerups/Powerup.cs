@@ -13,7 +13,7 @@ namespace SpaceWar
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<Player>() != null)
+            if (collision.gameObject == player.gameObject)
             {
                 OnUse();
             }

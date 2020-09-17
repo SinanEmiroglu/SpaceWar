@@ -383,7 +383,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5880,6 +5880,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3023592411569131366, guid: d015fe2c5049ecd43b24004668dc0d96, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
+    - target: {fileID: 3308454735930166411, guid: d015fe2c5049ecd43b24004668dc0d96, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
     - target: {fileID: 3497219502336469692, guid: d015fe2c5049ecd43b24004668dc0d96, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -5928,6 +5936,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4051907430616712447, guid: d015fe2c5049ecd43b24004668dc0d96, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
     - target: {fileID: 4523646543191863034, guid: d015fe2c5049ecd43b24004668dc0d96, type: 3}
       propertyPath: m_Layer
       value: 9
