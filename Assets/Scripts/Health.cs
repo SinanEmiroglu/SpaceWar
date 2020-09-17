@@ -16,6 +16,7 @@ namespace SpaceWar
         private void OnEnable()
         {
             _currentHealth = maxHealth;
+            OnHealthChanged?.Invoke(_currentHealth, maxHealth);
         }
 
         public void TakeHit(int amount)
@@ -40,7 +41,7 @@ namespace SpaceWar
         private void ModifyHealth(int amount)
         {
             _currentHealth += amount;
-            OnHealthChanged(_currentHealth, maxHealth);
+            OnHealthChanged?.Invoke(_currentHealth, maxHealth);
         }
     }
 }
