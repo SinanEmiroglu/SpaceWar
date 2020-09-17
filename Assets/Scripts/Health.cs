@@ -38,9 +38,25 @@ namespace SpaceWar
             }
         }
 
+        public void TakeHeal(int amount)
+        {
+            if (_currentHealth >= maxHealth)
+            {
+                return;
+            }
+
+            ModifyHealth(amount);
+        }
+
         private void ModifyHealth(int amount)
         {
             _currentHealth += amount;
+
+            if (_currentHealth >= maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
+
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
         }
     }

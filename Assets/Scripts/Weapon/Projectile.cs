@@ -8,18 +8,16 @@ namespace SpaceWar
 
         [HideInInspector] public Rigidbody2D Rigidbody2D;
 
-        public int Damage => damage;
-
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (collision.gameObject.GetComponent<Health>() != null)
+            if (other.gameObject.GetComponent<Health>() != null)
             {
-                var hitHealth = collision.gameObject.GetComponent<Health>();
+                var hitHealth = other.gameObject.GetComponent<Health>();
                 hitHealth.TakeHit(damage);
             }
 

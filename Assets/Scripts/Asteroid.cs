@@ -26,7 +26,7 @@ namespace SpaceWar
             Health.OnDie += DieHandler;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.GetComponent<Player>() != null)
             {
@@ -44,7 +44,7 @@ namespace SpaceWar
         {
             for (int i = 0; crumbleCount > 0 && i < crumbleCount; i++)
             {
-                Asteroid piece = GetRandomPrefab().Get<Asteroid>();
+                Asteroid piece = GetRandomPrefab().Get<Asteroid>(transform.position, Quaternion.identity);
 
                 piece.Mover.Speed = Random.Range(5, 10);
                 piece.Mover.Direction = Random.insideUnitCircle.normalized;
