@@ -4,12 +4,7 @@ namespace SpaceWar
 {
     public class UIGameScore : MonoBehaviour
     {
-        private TMPro.TextMeshProUGUI _score;
-
-        private void Awake()
-        {
-            _score = GetComponent<TMPro.TextMeshProUGUI>();
-        }
+        [SerializeField] private TMPro.TextMeshProUGUI score;
 
         private void OnEnable()
         {
@@ -18,7 +13,7 @@ namespace SpaceWar
 
         private void ScoreUpdatedHandler(int current, int max)
         {
-            _score.text = $"{current}/{max}";
+            score.text = $"Score: {current}/{max}";
         }
 
         private void OnDisable()

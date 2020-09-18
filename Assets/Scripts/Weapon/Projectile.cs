@@ -6,12 +6,7 @@ namespace SpaceWar
     {
         [SerializeField] private int damage = 1;
 
-        [HideInInspector] public Rigidbody2D Rigidbody2D;
-
-        private void Awake()
-        {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
-        }
+        public Rigidbody2D Rigidbody2D;
 
         private void OnTriggerEnter2D(Collider2D other)
         {

@@ -84,8 +84,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPoolSize: 10
+  OnDisabled:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 5
-  Rigidbody2D: {fileID: 0}
+  Rigidbody2D: {fileID: 2337109789641094468}
 --- !u!1 &5305615364684025283
 GameObject:
   m_ObjectHideFlags: 0

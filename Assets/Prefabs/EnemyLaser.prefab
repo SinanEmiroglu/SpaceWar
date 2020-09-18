@@ -135,5 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPoolSize: 25
+  OnDisabled:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 1
-  Rigidbody2D: {fileID: 0}
+  Rigidbody2D: {fileID: 7020725288469157612}

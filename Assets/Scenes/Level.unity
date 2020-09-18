@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ef7be8f7dd4a049a83689ce78cc51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 205208411}
 --- !u!1 &358506701
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,8 +590,8 @@ MonoBehaviour:
   - {fileID: 1025977597}
   - {fileID: 2044696330}
   respawnRate: 5
-  initialSpawnDelay: 0
-  totalNumberToSpawn: 25
+  initialSpawnDelay: 3
+  totalNumberToSpawn: 500
   numberToSpawnEachTime: 1
 --- !u!4 &766295460
 Transform:

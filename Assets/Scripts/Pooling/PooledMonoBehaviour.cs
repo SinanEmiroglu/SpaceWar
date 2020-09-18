@@ -8,8 +8,8 @@ namespace SpaceWar
     {
         [SerializeField] private int initialPoolSize = 25;
 
-        public event Action<PooledMonoBehaviour> OnReturnToPool = delegate { };
         public UnityEngine.Events.UnityEvent OnDisabled;
+        public event Action<PooledMonoBehaviour> OnReturnToPool = delegate { };
 
         public int InitialPoolSize => initialPoolSize;
 
