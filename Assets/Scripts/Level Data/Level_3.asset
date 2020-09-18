@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eee0b1d3aca39c4b9a74a8d6ebbc3e9, type: 3}
+  m_Name: Level_3
+  m_EditorClassIdentifier: 
+  Id: 3
+  PlayerMaxHealth: 50
+  ScoreToWin: 180
+  NextLevel: {fileID: 0}
+  SpawnablePrefabs:
+  - {fileID: 4257138270126009285, guid: 6de43ea367cb93348a5aeaefd968ce81, type: 3}
+  - {fileID: 6935422991880682648, guid: 3e2598a7be6446a4a9db5e7a7abae01f, type: 3}
+  - {fileID: 3860891875243768473, guid: 0be88cb85a189d54c983b6a978951026, type: 3}
+  - {fileID: 4236966338626878467, guid: 556e1b28a1b62e14688f0361495d9f3a, type: 3}

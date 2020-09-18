@@ -11,8 +11,7 @@ namespace SpaceWar
         {
             if (Random.value < probability)
             {
-                OnDieImpact?.Invoke();
-                Powerup powerup = GetRandomPowerup().Get<Powerup>();
+                Powerup powerup = GetRandomPowerup().Get<Powerup>(transform.position, Quaternion.identity);
             }
         }
 

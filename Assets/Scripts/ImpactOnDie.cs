@@ -4,8 +4,6 @@ namespace SpaceWar
 {
     public class ImpactOnDie : MonoBehaviour
     {
-        public UnityEngine.Events.UnityEvent OnDieImpact;
-
         private PooledMonoBehaviour _pooled;
 
         private void Awake()
@@ -18,10 +16,7 @@ namespace SpaceWar
             _pooled.OnReturnToPool += (pooled) => Impact();
         }
 
-        protected virtual void Impact()
-        {
-            OnDieImpact?.Invoke();
-        }
+        protected virtual void Impact() { }
 
         private void OnDisable()
         {

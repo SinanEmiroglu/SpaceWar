@@ -13,6 +13,8 @@ namespace SpaceWar
         public event Action OnDie = delegate { };
         public event Action<int, int> OnHealthChanged = delegate { };
 
+        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
         private void OnEnable()
         {
             _currentHealth = maxHealth;

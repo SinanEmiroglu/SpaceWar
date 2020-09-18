@@ -7,28 +7,42 @@ namespace SpaceWar
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private Spawnable[] prefabs;
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private float respawnRate = 2;
         [SerializeField] private float initialSpawnDelay = 5;
         [SerializeField] private int totalNumberToSpawn;
         [SerializeField] private int numberToSpawnEachTime = 1;
 
+        private bool _isSpawnable;
         private float _spawnTimer;
         private int _totalNumberSpawned = 0;
+        private List<Spawnable> _spawnables = new List<Spawnable>();
 
         private void OnEnable()
         {
+            _isSpawnable = false;
             _spawnTimer = respawnRate - initialSpawnDelay;
+            GameManager.OnLevelLoaded += LevelLoadedHandler;
         }
 
         private void Update()
         {
             _spawnTimer += Time.deltaTime;
+
             if (ShouldSpawn())
             {
                 Spawn();
             }
+        }
+
+        private void LevelLoadedHandler(LevelData data)
+        {
+            foreach (Spawnable prefab in data.SpawnablePrefabs)
+            {
+                _spawnables.Add(prefab);
+            }
+
+            _isSpawnable = true;
         }
 
         private void Spawn()
@@ -51,7 +65,7 @@ namespace SpaceWar
                         availableSpawnPoints.Remove(spawnPoint);
                     }
 
-                    var npc = prefab.Get<Spawnable>(spawnPoint.position, spawnPoint.rotation);
+                    Spawnable npc = prefab.Get<Spawnable>(spawnPoint.position, spawnPoint.rotation);
 
                     _totalNumberSpawned++;
                 }
@@ -74,26 +88,31 @@ namespace SpaceWar
 
         private Spawnable ChooseRandomPrefab()
         {
-            if (prefabs.Length == 0)
+            if (_spawnables.Count == 0)
             {
                 return null;
             }
-            if (prefabs.Length == 1)
+            if (_spawnables.Count == 1)
             {
-                return prefabs[0];
+                return _spawnables[0];
             }
-            int index = Random.Range(0, prefabs.Length);
-            return prefabs[index];
+            int index = Random.Range(0, _spawnables.Count);
+            return _spawnables[index];
         }
 
         private bool ShouldSpawn()
         {
-            if (_totalNumberSpawned >= totalNumberToSpawn && totalNumberToSpawn > 0)
+            if (_totalNumberSpawned >= totalNumberToSpawn && totalNumberToSpawn < 0 && !_isSpawnable)
             {
                 return false;
             }
 
             return _spawnTimer >= respawnRate;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.OnLevelLoaded -= LevelLoadedHandler;
         }
 
 #if UNITY_EDITOR
