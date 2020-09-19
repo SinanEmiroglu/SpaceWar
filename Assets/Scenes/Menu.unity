@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 73992594}
   - component: {fileID: 73992593}
   - component: {fileID: 73992592}
+  - component: {fileID: 73992595}
   m_Layer: 5
   m_Name: 'Button - Level [ID: 2]'
   m_TagString: Untagged
@@ -376,7 +377,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -390,23 +391,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 73992593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 605142682}
-        m_TargetAssemblyTypeName: SpaceWar.UILevelSelector, SpaceWar
-        m_MethodName: OnLevelLoaded
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &73992593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +434,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73992590}
   m_CullTransparentMesh: 0
+--- !u!114 &73992595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73992590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517dd7025f5176347b774f4dd7a32a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelId: 2
+  button: {fileID: 73992592}
 --- !u!1 &106619575
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +460,7 @@ GameObject:
   - component: {fileID: 106619579}
   - component: {fileID: 106619578}
   - component: {fileID: 106619577}
+  - component: {fileID: 106619580}
   m_Layer: 5
   m_Name: 'Button - Level [ID: 3]'
   m_TagString: Untagged
@@ -508,7 +512,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -522,23 +526,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 106619578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 605142682}
-        m_TargetAssemblyTypeName: SpaceWar.UILevelSelector, SpaceWar
-        m_MethodName: OnLevelLoaded
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &106619578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +569,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106619575}
   m_CullTransparentMesh: 0
+--- !u!114 &106619580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106619575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517dd7025f5176347b774f4dd7a32a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelId: 3
+  button: {fileID: 106619577}
 --- !u!1 &272403039
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +920,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605142681}
-  - component: {fileID: 605142682}
   m_Layer: 5
   m_Name: Level Selection Panel
   m_TagString: Untagged
@@ -946,18 +951,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &605142682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605142680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517dd7025f5176347b774f4dd7a32a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &627508728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,6 +1788,7 @@ GameObject:
   - component: {fileID: 1194991412}
   - component: {fileID: 1194991411}
   - component: {fileID: 1194991410}
+  - component: {fileID: 1194991413}
   m_Layer: 5
   m_Name: 'Button - Level [ID: 1]'
   m_TagString: Untagged
@@ -1846,7 +1840,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1860,23 +1854,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1194991411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 605142682}
-        m_TargetAssemblyTypeName: SpaceWar.UILevelSelector, SpaceWar
-        m_MethodName: OnLevelLoaded
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1194991411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1897,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194991408}
   m_CullTransparentMesh: 0
+--- !u!114 &1194991413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194991408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517dd7025f5176347b774f4dd7a32a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelId: 1
+  button: {fileID: 1194991410}
 --- !u!1 &1252923038
 GameObject:
   m_ObjectHideFlags: 0

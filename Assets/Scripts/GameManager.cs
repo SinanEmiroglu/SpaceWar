@@ -11,7 +11,7 @@ namespace SpaceWar
         public static event Action<float> OnLevelLoading = delegate { };
         public static event Action<LevelData> OnLevelLoaded = delegate { };
         public static event Action OnLevelUnloaded = delegate { };
-        public static event Action OnGameOver = delegate { };
+        public static event Action OnWin = delegate { };
 
         [SerializeField] private LevelData[] allLevelData;
 
@@ -24,7 +24,8 @@ namespace SpaceWar
                 _currentScore = value;
                 if (_currentScore >= CurrentLevelData.ScoreToWin)
                 {
-                    OnGameOver?.Invoke();
+                    CurrentLevelData.NextLevel.IsUnlocked = true;
+                    OnWin?.Invoke();
                 }
                 OnScoreUpdated?.Invoke(_currentScore, CurrentLevelData.ScoreToWin);
             }
@@ -35,6 +36,19 @@ namespace SpaceWar
         public void LoadLevel(int levelId)
         {
             StartCoroutine(BeginGameCor(levelId));
+        }
+
+        public bool IsLevelUnlocked(int levelId)
+        {
+            foreach (var data in allLevelData)
+            {
+                if (data.Id == levelId)
+                {
+                    return data.IsUnlocked;
+                }
+            }
+
+            return false;
         }
 
         private IEnumerator BeginGameCor(int levelId)

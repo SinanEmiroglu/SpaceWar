@@ -6,6 +6,7 @@ namespace SpaceWar
     public class LevelData : ScriptableObject
     {
         public int Id;
+        public bool IsUnlocked;
         public int ScoreToWin;
         public LevelData NextLevel;
         public Spawnable[] SpawnablePrefabs;

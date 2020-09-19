@@ -23,7 +23,7 @@ namespace SpaceWar
 
         private void Update()
         {
-            _transform.position += Speed * Time.deltaTime * Direction;
+            _transform.position += speed * Time.deltaTime * Direction;
         }
     }
 }
