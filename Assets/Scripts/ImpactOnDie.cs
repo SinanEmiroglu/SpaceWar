@@ -4,23 +4,29 @@ namespace SpaceWar
 {
     public class ImpactOnDie : MonoBehaviour
     {
-        private PooledMonoBehaviour _pooled;
+        protected Health _health;
+        protected GameManager _gameManager;
 
         private void Awake()
         {
-            _pooled = GetComponent<PooledMonoBehaviour>();
+            _health = GetComponent<Health>();
+
+            if (GameManager.TryGetInstance(out GameManager manager))
+            {
+                _gameManager = manager;
+            }
         }
 
         private void OnEnable()
         {
-            _pooled.OnReturnToPool += (pooled) => Impact();
+            _health.OnDie += Impact;
         }
 
         protected virtual void Impact() { }
 
         private void OnDisable()
         {
-            _pooled.OnReturnToPool -= (pooled) => Impact();
+            _health.OnDie -= Impact;
         }
     }
 }

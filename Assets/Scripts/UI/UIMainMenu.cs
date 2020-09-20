@@ -32,6 +32,8 @@ namespace SpaceWar
 
         private void LevelUnloadedHandler()
         {
+            gameObject.SetActive(true);
+            menuPanel.SetActive(false);
             levelSelectionPanel.SetActive(true);
             levelLoadingPanel.SetActive(false);
         }

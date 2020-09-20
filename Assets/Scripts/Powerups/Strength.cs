@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace SpaceWar
+﻿namespace SpaceWar
 {
     public class Strength : Powerup
     {

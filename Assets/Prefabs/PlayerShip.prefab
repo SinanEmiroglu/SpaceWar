@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateInSecond: 0.3
-  ProjectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
 --- !u!114 &4051907430616712447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  projectilePrefab: {fileID: 0}
   firePoints:
   - {fileID: 4528021803706645753}
   - {fileID: 6343544317852625854}
@@ -392,7 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateInSecond: 0.3
-  ProjectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
 --- !u!114 &3308454735930166411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  projectilePrefab: {fileID: 0}
   firePoints:
   - {fileID: 878908042785456900}
 --- !u!1 &8741802907713743936
@@ -478,7 +478,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: ee867409d09088646b60d0d2a5972bdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -537,7 +537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateInSecond: 0.3
-  ProjectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
 --- !u!114 &3023592411569131366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  projectilePrefab: {fileID: 0}
   firePoints:
   - {fileID: 1826372042040956859}
   - {fileID: 8674166181719570}

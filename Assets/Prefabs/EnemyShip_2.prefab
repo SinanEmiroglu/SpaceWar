@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1701dded65d78234ba385230fe54a841, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 6935422991880682648}
   - component: {fileID: 2802786575793699701}
   - component: {fileID: 9136866062865768343}
+  - component: {fileID: 5344537812075937766}
   m_Layer: 8
   m_Name: EnemyShip_2
   m_TagString: Untagged
@@ -230,6 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPoolSize: 10
+  OnDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2802786575793699701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,3 +260,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+--- !u!114 &5344537812075937766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803029858875022365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de62ea97d64667e4c81e0d2fedf8ff0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 8

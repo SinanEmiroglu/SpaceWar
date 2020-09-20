@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1294471202214221296}
   - component: {fileID: 8122610590282506762}
   m_Layer: 8
-  m_Name: rocket
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b5bf9c4e2cebe9d40b086efa2faed2ab, type: 3}
   m_Color: {r: 1, g: 0.3339622, b: 0.34556794, a: 1}
   m_FlipX: 0
