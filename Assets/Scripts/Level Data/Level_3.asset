@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level_3
   m_EditorClassIdentifier: 
   Id: 3
-  PlayerMaxHealth: 50
-  ScoreToWin: 180
+  IsUnlocked: 0
+  ScoreToWin: 150
   NextLevel: {fileID: 0}
   SpawnablePrefabs:
   - {fileID: 4257138270126009285, guid: 6de43ea367cb93348a5aeaefd968ce81, type: 3}

@@ -99,9 +99,9 @@ namespace SpaceWar
                 {
                     ""name"": """",
                     ""id"": ""52cb46a3-c384-4d5d-ab9d-fab551f930ff"",
-                    ""path"": ""<Touchscreen>/touch0/delta"",
-                    ""interactions"": ""Hold"",
-                    ""processors"": """",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
