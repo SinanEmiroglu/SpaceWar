@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 568119882966509585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f465e449d8f074cb1c1e7030e7f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRateInSecond: 0.3
+  fireRateInSecond: 0.25
 --- !u!114 &4051907430616712447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338dd5035064f74986fa7897a7e563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  projectilePrefab: {fileID: 0}
+  moveSpeed: 15
+  projectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
   firePoints:
   - {fileID: 4528021803706645753}
   - {fileID: 6343544317852625854}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4528021803706645753}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8674166181719570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826372042040956859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,9 @@ GameObject:
   - component: {fileID: 3466239260304525244}
   - component: {fileID: 7783583299128505521}
   - component: {fileID: 9207931894324016660}
-  m_Layer: 0
+  - component: {fileID: 1449112327}
+  - component: {fileID: 1449112326}
+  m_Layer: 9
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,6 +318,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+--- !u!114 &1449112327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742832544788913527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa1ee481e8098740a72d686d51b28c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillButtonIndex: 1
+  skillRefreshSpeed: 5
+  missileSpeed: 7
+  launchPoint: {fileID: 878908042785456900}
+  missilePrefab: {fileID: 5889798488149170259, guid: 3e863dad77608624ca83afa5836aa3d8, type: 3}
+--- !u!114 &1449112326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742832544788913527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ee4c3c34bd65a4391b508747b452c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillButtonIndex: 2
+  skillRefreshSpeed: 10
+  duration: 5
+  shieldPrefab: {fileID: 8734150073186087211, guid: 2ec8decb297cd3f418ea9be2f68b0180, type: 3}
 --- !u!1 &6969476355487362697
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 878908042785456900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f465e449d8f074cb1c1e7030e7f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRateInSecond: 0.3
+  fireRateInSecond: 0.25
 --- !u!114 &3308454735930166411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,8 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338dd5035064f74986fa7897a7e563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  projectilePrefab: {fileID: 0}
+  moveSpeed: 15
+  projectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
   firePoints:
   - {fileID: 878908042785456900}
 --- !u!1 &8741802907713743936
@@ -536,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f465e449d8f074cb1c1e7030e7f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRateInSecond: 0.3
+  fireRateInSecond: 0.25
 --- !u!114 &3023592411569131366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,8 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338dd5035064f74986fa7897a7e563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  projectilePrefab: {fileID: 0}
+  moveSpeed: 15
+  projectilePrefab: {fileID: 1703962826901123710, guid: 075263f40cd0af44aac746c7f797a35f, type: 3}
   firePoints:
   - {fileID: 1826372042040956859}
   - {fileID: 8674166181719570}
@@ -563,7 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6343544317852625854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
