@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2621e4fc6a90c884aacbb2b0041ef4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialPoolSize: 50
+  initialPoolSize: 30
   OnDisabled:
     m_PersistentCalls:
       m_Calls: []
