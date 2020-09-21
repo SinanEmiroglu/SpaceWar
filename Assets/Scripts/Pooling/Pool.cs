@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SpaceWar
 {
@@ -7,19 +8,29 @@ namespace SpaceWar
     {
         public static Dictionary<PooledMonoBehaviour, Pool> Pools = new Dictionary<PooledMonoBehaviour, Pool>();
 
+        private const string _poolSceneName = "Pools";
+
         private Queue<PooledMonoBehaviour> _objects = new Queue<PooledMonoBehaviour>();
+        private HashSet<PooledMonoBehaviour> _availableObjects = new HashSet<PooledMonoBehaviour>();
         private PooledMonoBehaviour _prefab;
 
         public static Pool GetPool(PooledMonoBehaviour prefab)
         {
-            //if that specific prefab included in the dictionary, then just return.
             if (Pools.ContainsKey(prefab))
             {
                 return Pools[prefab];
             }
-            //Otherwise, create a new GameObject and add it to the dictionary
+
             var poolGameObject = new GameObject("Pool - " + prefab.name);
             var pool = poolGameObject.AddComponent<Pool>();
+
+            if (!SceneManager.GetSceneByName(_poolSceneName).isLoaded)
+            {
+                SceneManager.LoadScene(_poolSceneName, LoadSceneMode.Additive);
+            }
+
+            SceneManager.MoveGameObjectToScene(poolGameObject, SceneManager.GetSceneByName(_poolSceneName));
+
             pool._prefab = prefab;
 
             Pools.Add(prefab, pool);
@@ -38,16 +49,24 @@ namespace SpaceWar
             return pooledObject as T;
         }
 
+        public void ReturnAllToPool()
+        {
+            foreach (var pooled in _availableObjects)
+            {
+                pooled.ReturnToPool();
+            }
+        }
+
         private void GrowPool()
         {
             for (int i = 0; i < _prefab.InitialPoolSize; i++)
             {
                 var pooledObject = Instantiate(_prefab);
 
-                pooledObject.gameObject.name += " " + i;
+                _availableObjects.Add(pooledObject);
 
+                pooledObject.gameObject.name = $"{_prefab.name} {i}";
                 pooledObject.OnReturnToPool += AddObjectToAvailableQueue;
-
                 pooledObject.transform.SetParent(transform);
                 pooledObject.gameObject.SetActive(false);
             }

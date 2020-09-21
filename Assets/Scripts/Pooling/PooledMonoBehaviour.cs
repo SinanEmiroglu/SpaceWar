@@ -43,7 +43,10 @@ namespace SpaceWar
 
         public void ReturnToPool(float delay = 0)
         {
-            StartCoroutine(ReturnToPoolAfterSeconds(delay));
+            if (gameObject.activeInHierarchy)
+            {
+                StartCoroutine(ReturnToPoolAfterSeconds(delay));
+            }
         }
 
         private IEnumerator ReturnToPoolAfterSeconds(float delay)

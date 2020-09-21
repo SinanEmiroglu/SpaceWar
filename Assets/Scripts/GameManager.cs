@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,7 +46,16 @@ namespace SpaceWar
 
         public void HandleReturnMenu()
         {
+            ReturnAllToPool();
             SceneManager.UnloadSceneAsync(1).completed += (opr) => OnLevelUnloaded?.Invoke();
+        }
+
+        private void ReturnAllToPool()
+        {
+            foreach (var pool in Pool.Pools.Values)
+            {
+                pool.ReturnAllToPool();
+            }
         }
 
         public void HandleNextLevel()
