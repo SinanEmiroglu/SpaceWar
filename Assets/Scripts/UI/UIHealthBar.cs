@@ -11,7 +11,7 @@ namespace SpaceWar
 
         private void Awake()
         {
-            _player = FindObjectOfType<Player>();
+            _player = GameManager.Instance.Player;
         }
 
         private void OnEnable()

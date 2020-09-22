@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,16 +31,13 @@ namespace SpaceWar
             }
         }
 
+        public Player Player;
+
         private int _currentScore = 0;
 
         public void LoadLevel(int levelId)
         {
             StartCoroutine(BeginGameCor(levelId));
-        }
-
-        public void HandleGameOver(bool isWon)
-        {
-            OnGameOver?.Invoke(isWon);
         }
 
         public void HandleReturnMenu()
@@ -110,6 +106,10 @@ namespace SpaceWar
                     OnLevelLoaded?.Invoke(allLevelData[i]);
                 }
             }
+
+            yield return null;
+
+            Player.Health.OnDie += () => OnGameOver?.Invoke(false);
         }
     }
 }

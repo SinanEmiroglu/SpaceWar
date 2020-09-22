@@ -10,12 +10,7 @@ namespace SpaceWar
 
         private void OnEnable()
         {
-            Health.OnDie += DieHander;
-        }
-
-        private void DieHander()
-        {
-            GameManager.Instance.HandleGameOver(false);
+            GameManager.Instance.Player = this;
         }
 
         public void WeaponTierUp()
@@ -24,11 +19,6 @@ namespace SpaceWar
             {
                 weapons[i].gameObject.SetActive(true);
             }
-        }
-
-        private void OnDisable()
-        {
-            Health.OnDie -= DieHander;
         }
     }
 }

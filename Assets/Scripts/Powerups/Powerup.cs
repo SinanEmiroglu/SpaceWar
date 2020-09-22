@@ -8,7 +8,7 @@ namespace SpaceWar
 
         private void Awake()
         {
-            player = FindObjectOfType<Player>();
+            player = GameManager.Instance.Player;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

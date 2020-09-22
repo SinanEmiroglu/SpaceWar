@@ -2,7 +2,6 @@
 
 namespace SpaceWar
 {
-    [RequireComponent(typeof(Weapon))]
     public class WeaponProjectileLauncher : WeaponComponent
     {
         [SerializeField] private float moveSpeed = 20f;

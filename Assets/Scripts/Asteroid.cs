@@ -16,7 +16,6 @@ namespace SpaceWar
 
         private void Awake()
         {
-            _player = FindObjectOfType<Player>();
             Health = GetComponent<Health>();
             Mover = GetComponent<NonPlayerMover>();
         }
@@ -24,6 +23,11 @@ namespace SpaceWar
         private void OnEnable()
         {
             Health.OnDie += DieHandler;
+        }
+
+        private void Start()
+        {
+            _player = GameManager.Instance.Player;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

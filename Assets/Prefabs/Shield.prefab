@@ -147,3 +147,5 @@ MonoBehaviour:
   OnDisabled:
     m_PersistentCalls:
       m_Calls: []
+  healAmount: 1
+  healFrequency: 1

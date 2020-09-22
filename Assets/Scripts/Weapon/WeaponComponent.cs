@@ -2,6 +2,7 @@
 
 namespace SpaceWar
 {
+    [RequireComponent(typeof(Weapon))]
     public abstract class WeaponComponent : MonoBehaviour
     {
         protected Weapon _weapon;
