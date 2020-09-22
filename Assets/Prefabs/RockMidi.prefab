@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3870534190019714660}
   - component: {fileID: 3386913836516575035}
   - component: {fileID: 1017518924263842310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RockMidi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280679586618112656}
   - component: {fileID: 2695770501198130769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

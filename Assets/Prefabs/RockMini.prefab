@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6176670645078056601}
   - component: {fileID: 6176670645078056602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8740997821659159378}
   - component: {fileID: 2640179530634303529}
   - component: {fileID: -5926682902057016365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RockMini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
