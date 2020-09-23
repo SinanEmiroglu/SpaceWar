@@ -13,6 +13,16 @@ namespace SpaceWar
             GameManager.Instance.Player = this;
         }
 
+        private void OnEnable()
+        {
+            GameManager.OnGameOver += GameOverHandler;
+        }
+
+        private void GameOverHandler(bool obj)
+        {
+            gameObject.SetActive(false);
+        }
+
         public void WeaponTierUp()
         {
             for (int i = 0; i < weapons.Length; i++)
@@ -23,6 +33,11 @@ namespace SpaceWar
                     break;
                 }
             }
+        }
+
+        private void OnDisable()
+        {
+            GameManager.OnGameOver -= GameOverHandler;
         }
     }
 }

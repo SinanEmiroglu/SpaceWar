@@ -5,6 +5,8 @@ namespace SpaceWar
 {
     public class Shield : PooledMonoBehaviour
     {
+        public bool ShouldHealOverTime = true;
+
         [SerializeField] private int healAmount = 1;
         [SerializeField] private float healFrequency = 1f;
 
@@ -24,7 +26,7 @@ namespace SpaceWar
 
         private IEnumerator HealPlayerCor()
         {
-            while (true)
+            while (ShouldHealOverTime)
             {
                 _player.Health.TakeHeal(healAmount);
                 yield return _waitForSeconds;

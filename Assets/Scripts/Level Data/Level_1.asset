@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   IsUnlocked: 1
-  ScoreToWin: 75
+  ScoreToWin: 125
   NextLevel: {fileID: 11400000, guid: 3ae61e42040c18b4a82ae72a5946e0f8, type: 2}
   SpawnablePrefabs:
+  - {fileID: 4257138270126009285, guid: 6de43ea367cb93348a5aeaefd968ce81, type: 3}
   - {fileID: 6935422991880682648, guid: 3e2598a7be6446a4a9db5e7a7abae01f, type: 3}
-  - {fileID: 7825485105500480495, guid: a74a7cfc2dbc7c84691de64e88cf0fb6, type: 3}
-  - {fileID: 2350037354920515507, guid: a2a1324047043cb42948c32b38a73673, type: 3}
-  - {fileID: 4938222573868708567, guid: 1dbfdb5bcacd09a4d9529999ee61f6a9, type: 3}
+  - {fileID: 3860891875243768473, guid: 0be88cb85a189d54c983b6a978951026, type: 3}
+  - {fileID: 4236966338626878467, guid: 556e1b28a1b62e14688f0361495d9f3a, type: 3}

@@ -2,7 +2,7 @@
 
 namespace SpaceWar
 {
-    public class Healing : Powerup
+    public class PlayerHealer : Powerup
     {
         [SerializeField] private int healAmount = 3;
 

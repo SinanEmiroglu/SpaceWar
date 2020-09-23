@@ -28,7 +28,6 @@ namespace SpaceWar
                     {
                         CurrentLevelData.NextLevel.IsUnlocked = true;
                     }
-                    Player.gameObject.SetActive(false);
                     OnGameOver?.Invoke(true);
                 }
                 OnScoreUpdated?.Invoke(_currentScore, CurrentLevelData.ScoreToWin);

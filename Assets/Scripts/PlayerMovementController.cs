@@ -19,9 +19,9 @@ namespace SpaceWar
 
         private void Awake()
         {
-            _controls = new InputControls();
             _transform = transform;
             _mainCamera = Camera.main;
+            _controls = new InputControls();
         }
 
         private void OnEnable()

@@ -1,6 +1,6 @@
 ﻿namespace SpaceWar
 {
-    public class Strength : Powerup
+    public class LaserEnhancer : Powerup
     {
         protected override void OnUse()
         {
