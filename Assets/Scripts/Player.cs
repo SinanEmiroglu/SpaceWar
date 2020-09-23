@@ -8,7 +8,7 @@ namespace SpaceWar
 
         [SerializeField] private Weapon[] weapons;
 
-        private void OnEnable()
+        private void Awake()
         {
             GameManager.Instance.Player = this;
         }
@@ -17,7 +17,11 @@ namespace SpaceWar
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                weapons[i].gameObject.SetActive(true);
+                if (!weapons[i].isActiveAndEnabled)
+                {
+                    weapons[i].gameObject.SetActive(true);
+                    break;
+                }
             }
         }
     }

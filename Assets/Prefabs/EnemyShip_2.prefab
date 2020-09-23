@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f465e449d8f074cb1c1e7030e7f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRateInSecond: 2
+  fireRateInSecond: 3
 --- !u!114 &5140173657418785397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00be6f29344c9204c863e2524c9090a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 12
 --- !u!114 &5344537812075937766
 MonoBehaviour:
   m_ObjectHideFlags: 0

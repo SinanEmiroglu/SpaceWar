@@ -24,7 +24,11 @@ namespace SpaceWar
                 _currentScore = value;
                 if (_currentScore >= CurrentLevelData.ScoreToWin)
                 {
-                    CurrentLevelData.NextLevel.IsUnlocked = true;
+                    if (CurrentLevelData.NextLevel != null)
+                    {
+                        CurrentLevelData.NextLevel.IsUnlocked = true;
+                    }
+                    Player.gameObject.SetActive(false);
                     OnGameOver?.Invoke(true);
                 }
                 OnScoreUpdated?.Invoke(_currentScore, CurrentLevelData.ScoreToWin);
@@ -44,14 +48,6 @@ namespace SpaceWar
         {
             ReturnAllToPool();
             SceneManager.UnloadSceneAsync(1).completed += (opr) => OnLevelUnloaded?.Invoke();
-        }
-
-        private void ReturnAllToPool()
-        {
-            foreach (var pool in Pool.Pools.Values)
-            {
-                pool.ReturnAllToPool();
-            }
         }
 
         public void HandleNextLevel()
@@ -84,6 +80,14 @@ namespace SpaceWar
             }
 
             return false;
+        }
+
+        private void ReturnAllToPool()
+        {
+            foreach (var pool in Pool.Pools.Values)
+            {
+                pool.ReturnAllToPool();
+            }
         }
 
         private IEnumerator BeginGameCor(int levelId)
