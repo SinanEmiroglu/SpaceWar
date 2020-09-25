@@ -7,15 +7,18 @@ namespace SpaceWar
     {
         [SerializeField] private int maxHealth = 5;
 
-        private int _currentHealth;
-
         public event Action OnTookHit = delegate { };
         public event Action OnDie = delegate { };
         public event Action<int, int> OnHealthChanged = delegate { };
 
-        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+        private int _currentHealth;
 
-        private void OnEnable()
+        public int MaxHealth { get => maxHealth; set => maxHealth = value; }// for testing purpose.
+        public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; } // for testing purpose.
+
+
+        //Visible because of testing purpose.
+        public void OnEnable()
         {
             _currentHealth = maxHealth;
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
@@ -36,18 +39,21 @@ namespace SpaceWar
             }
             else
             {
+                _currentHealth = 0;
                 OnDie();
             }
         }
 
         public void TakeHeal(int amount)
         {
+            int positiveAmount = Mathf.Abs(amount);
+
             if (_currentHealth >= maxHealth)
             {
                 return;
             }
 
-            ModifyHealth(amount);
+            ModifyHealth(positiveAmount);
         }
 
         private void ModifyHealth(int amount)
