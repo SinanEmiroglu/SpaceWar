@@ -10,17 +10,14 @@ namespace SpaceWar
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private float respawnRate = 2;
         [SerializeField] private float initialSpawnDelay = 5;
-        [SerializeField] private int totalNumberToSpawn;
         [SerializeField] private int numberToSpawnEachTime = 1;
 
         private bool _isSpawnable;
         private float _spawnTimer;
-        private int _totalNumberSpawned = 0;
         private List<Spawnable> _spawnables = new List<Spawnable>();
 
         private void OnEnable()
         {
-            _isSpawnable = false;
             _spawnTimer = respawnRate - initialSpawnDelay;
             GameManager.OnLevelLoaded += LevelLoadedHandler;
         }
@@ -48,13 +45,10 @@ namespace SpaceWar
         private void Spawn()
         {
             _spawnTimer = 0;
-
             var availableSpawnPoints = spawnPoints.ToList();
+
             for (int i = 0; i < numberToSpawnEachTime; i++)
             {
-                if (_totalNumberSpawned >= totalNumberToSpawn && totalNumberToSpawn > 0)
-                    break;
-
                 Spawnable prefab = ChooseRandomPrefab();
                 if (prefab != null)
                 {
@@ -66,8 +60,6 @@ namespace SpaceWar
                     }
 
                     Spawnable npc = prefab.Get<Spawnable>(spawnPoint.position, spawnPoint.rotation);
-
-                    _totalNumberSpawned++;
                 }
             }
         }
@@ -102,7 +94,7 @@ namespace SpaceWar
 
         private bool ShouldSpawn()
         {
-            if (_totalNumberSpawned >= totalNumberToSpawn && totalNumberToSpawn < 0 && !_isSpawnable)
+            if (!_isSpawnable)
             {
                 return false;
             }
@@ -112,6 +104,7 @@ namespace SpaceWar
 
         private void OnDisable()
         {
+            _isSpawnable = false;
             GameManager.OnLevelLoaded -= LevelLoadedHandler;
         }
 
