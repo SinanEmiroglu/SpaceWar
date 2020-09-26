@@ -898,6 +898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479836398c81a144ca9417277abe3167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnRate: 5
+  initialSpawnDelay: 3
+  numberToSpawnEachTime: 2
   spawnPoints:
   - {fileID: 960266785}
   - {fileID: 431284301}
@@ -905,9 +908,6 @@ MonoBehaviour:
   - {fileID: 128402284}
   - {fileID: 1025977597}
   - {fileID: 2044696330}
-  respawnRate: 5
-  initialSpawnDelay: 3
-  numberToSpawnEachTime: 1
 --- !u!4 &766295460
 Transform:
   m_ObjectHideFlags: 0

@@ -35,8 +35,8 @@ namespace SpaceWar
             if (collision.gameObject.GetComponent<Health>() != null)
             {
                 _player.Health.TakeHit(damage);
+                ReturnToPool();
             }
-            ReturnToPool();
         }
 
         private void DieHandler()

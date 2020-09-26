@@ -35,7 +35,7 @@ namespace SpaceWar
                     ""id"": ""68a4304d-1903-4fc8-839a-c35d364acc40"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,

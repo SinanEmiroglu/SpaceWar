@@ -7,7 +7,6 @@ namespace SpaceWar
 {
     public class GameManager : Singleton<GameManager>
     {
-        //public static Player Player;
         public static event Action<int, int> OnScoreUpdated = delegate { };
         public static event Action<float> OnLevelLoading = delegate { };
         public static event Action<LevelData> OnLevelLoaded = delegate { };
@@ -56,6 +55,10 @@ namespace SpaceWar
                 if (CurrentLevelData.NextLevel != null)
                 {
                     LoadLevel(CurrentLevelData.Id + 1);
+                }
+                else
+                {
+                    LoadLevel(CurrentLevelData.Id);
                 }
             };
         }

@@ -7,10 +7,10 @@ namespace SpaceWar
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private float respawnRate = 2;
         [SerializeField] private float initialSpawnDelay = 5;
         [SerializeField] private int numberToSpawnEachTime = 1;
+        [SerializeField] private Transform[] spawnPoints;
 
         private bool _isSpawnable;
         private float _spawnTimer;
