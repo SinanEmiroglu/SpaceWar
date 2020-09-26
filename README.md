@@ -1,5 +1,7 @@
 # SpaceWar
- Rovio Code Challenge
+Rovio Code Challenge
+
+**Playable APK:** [Space War](https://www.google.com)
 
 ## 1. Game Design
 **Genre:** 2D Arcade-like Space Shooter
@@ -17,7 +19,7 @@
 **Game Rules:** The game has a win and a loss condition. Basically, the game is won when the desired score is achieved, and the game is lost when the player dies. Players can see their health and points information from a UI in the upper left corner of their screens.
 The game consists of three levels that are linearly connected. Respectively, as levels are completed the next will be unlocked. Since level data is generically designed, it is very easy to create new levels.
 
-## 2. Game Objects
+## 2. Game Elements
 **Player:** Players can move their ship with the primary finger touch. When the game starts, the player's ship automatically starts firing. Also, players have two skills that they can use by pressing skill buttons. These are missile, a rocket giving incredible damage, and a shield that can also heal the player periodically. Missile skill has five seconds and shield skill has ten seconds cool-down.
 
 **Enemies:** There are three different enemy ships that can use different weapons such as lasers or rockets in the game. Although they can use weapons in different formations, their mobility is the same.
@@ -32,20 +34,22 @@ During the development process, SOLID principles were adopted as much as possibl
 Interface integration principle could be used for damage and die mechanics. However, I chose a more modular structure that can be used as a component in the editor by making a separate health class.
 
 ### 3.1. Imported Packages
-New Input System: It was used the new input system to handle player ship movement and all other interactions.
+**New Input System:** It was used the new input system to handle player ship movement and all other interactions.
 
 There are two action maps: Player and UI for inputs
  1. Move Action: It’s a normalized 2D vector composite using the delta vectors of the primary touch and mouse position.
  2. UI Action Map: This map borrowed from default input system asset. Besides, the action asset of “EventSystem” was replaced with my version of input asset.
 
-Pooling & Spawning System: I wrote these systems after I took an advanced Unity Mastery course more than a year ago. Any class extended from “PooledMonoBehaviour” can be pooled easily in a Pool game object in the scene. For this challenge, they were a little bit refactored and changed. Since the level scene is additively loaded, all pooled objects were instantiated in the main scene. Instead of that, an empty scene was created just for pooled objects. Besides, after level unloaded pooled objects will be enabled in the pool scene, so a returning all objects to pool method added.
+**Pooling & Spawning System:** I wrote these systems after I took an advanced Unity Mastery course more than a year ago. Any class extended from “PooledMonoBehaviour” can be pooled easily in a Pool game object in the scene. For this challenge, they were a little bit refactored and changed. Since the level scene is additively loaded, all pooled objects were instantiated in the main scene. Instead of that, an empty scene was created just for pooled objects. Besides, after level unloaded pooled objects will be enabled in the pool scene, so a returning all objects to pool method added.
 
 For spawning system, instead of adding spawnable prefabs directly to the spawner objects in the level scene. I created “LevelData” to keep any kinds of spawnables for each specific level. Spawner are reading prefabs from level data after level loaded.
 
 ### 3.2. Code Architecture
-**Game Manager:** It is a singleton class to manage loading levels and game results.
+**Game Manager:** It is a singleton class to manage loading levels and game results. In addition, the score property and the event handling are kept under this class.
+
 **Level Data:** Level data were designed as scriptable objects, these data objects include how many points are required to win the corresponding level, what the next level will be to unlocked, and which objects will be spawn in the current level.
-Game Elements with Components Attached:
+
+**Game Objects with Components Attached:**
 
 - Player Ship
   - Player : Monobehaviour
