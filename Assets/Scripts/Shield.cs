@@ -15,7 +15,7 @@ namespace SpaceWar
 
         private void Awake()
         {
-            _player = GameManager.Instance.Player;
+            _player = Player.Current;
             _waitForSeconds = new WaitForSeconds(healFrequency);
         }
 

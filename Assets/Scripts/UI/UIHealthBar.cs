@@ -9,13 +9,9 @@ namespace SpaceWar
 
         private Player _player;
 
-        private void Awake()
+        private void Start()
         {
-            _player = GameManager.Instance.Player;
-        }
-
-        private void OnEnable()
-        {
+            _player = Player.Current;
             _player.Health.OnHealthChanged += HealthChangedHandler;
         }
 
@@ -24,7 +20,7 @@ namespace SpaceWar
             healthBar.fillAmount = current / (float)max;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _player.Health.OnHealthChanged -= HealthChangedHandler;
         }

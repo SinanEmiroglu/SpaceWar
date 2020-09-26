@@ -7,6 +7,7 @@ namespace SpaceWar
 {
     public class GameManager : Singleton<GameManager>
     {
+        //public static Player Player;
         public static event Action<int, int> OnScoreUpdated = delegate { };
         public static event Action<float> OnLevelLoading = delegate { };
         public static event Action<LevelData> OnLevelLoaded = delegate { };
@@ -34,7 +35,6 @@ namespace SpaceWar
             }
         }
 
-        public Player Player;
 
         private int _currentScore = 0;
 
@@ -112,7 +112,7 @@ namespace SpaceWar
 
             yield return null;
 
-            Player.Health.OnDie += () => OnGameOver?.Invoke(false);
+            Player.Current.Health.OnDie += () => OnGameOver?.Invoke(false);
         }
     }
 }

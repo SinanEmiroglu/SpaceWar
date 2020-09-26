@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f465e449d8f074cb1c1e7030e7f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRateInSecond: 3
+  fireRateInSecond: 2.7
 --- !u!114 &5140173657418785397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338dd5035064f74986fa7897a7e563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   projectilePrefab: {fileID: 2795667363028412975, guid: 31baf95b08362b740b5087bf99947102, type: 3}
   firePoints:
   - {fileID: 6797711376574448835}

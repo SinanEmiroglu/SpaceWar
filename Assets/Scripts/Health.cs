@@ -13,12 +13,12 @@ namespace SpaceWar
 
         private int _currentHealth;
 
-        public int MaxHealth { get => maxHealth; set => maxHealth = value; }// for testing purpose.
-        public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; } // for testing purpose.
+        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
 
 
         //Visible because of testing purpose.
-        public void OnEnable()
+        private void OnEnable()
         {
             _currentHealth = maxHealth;
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
@@ -35,12 +35,12 @@ namespace SpaceWar
 
             if (_currentHealth > 0)
             {
-                OnTookHit();
+                OnTookHit?.Invoke();
             }
             else
             {
                 _currentHealth = 0;
-                OnDie();
+                OnDie?.Invoke();
             }
         }
 

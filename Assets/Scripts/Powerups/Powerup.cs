@@ -6,9 +6,9 @@ namespace SpaceWar
     {
         protected Player player;
 
-        private void Awake()
+        private void Start()
         {
-            player = GameManager.Instance.Player;
+            player = Player.Current;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

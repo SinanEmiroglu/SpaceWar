@@ -27,16 +27,16 @@ namespace SpaceWar
 
         private void Start()
         {
-            _player = GameManager.Instance.Player;
+            _player = Player.Current;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<Player>() != null)
+            if (collision.gameObject.GetComponent<Health>() != null)
             {
                 _player.Health.TakeHit(damage);
-                ReturnToPool();
             }
+            ReturnToPool();
         }
 
         private void DieHandler()

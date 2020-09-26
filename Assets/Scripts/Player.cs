@@ -4,13 +4,16 @@ namespace SpaceWar
 {
     public class Player : MonoBehaviour
     {
+        public static Player Current;
+
         public Health Health;
 
         [SerializeField] private Weapon[] weapons;
 
         private void Awake()
         {
-            GameManager.Instance.Player = this;
+            Current = this;
+           // GameManager.Player = this;
         }
 
         private void OnEnable()
