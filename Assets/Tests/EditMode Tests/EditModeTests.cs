@@ -18,10 +18,10 @@ namespace SpaceWar.Tests
         [Test]
         public void _1_Player_Has_Full_Health_When_Game_Started()
         {
-            //_playerHealth.MaxHealth = 10;
-            //_playerHealth.OnEnable();
+            _playerHealth.MaxHealth = 10;
+            _playerHealth.OnEnable();
 
-            //Assert.AreEqual(_playerHealth.MaxHealth, _playerHealth.CurrentHealth);
+            Assert.AreEqual(_playerHealth.MaxHealth, _playerHealth.CurrentHealth);
         }
 
         [TestCase(10, 10, 0)]
@@ -34,7 +34,7 @@ namespace SpaceWar.Tests
         public void _2_Player_Take_Hit_By_Amount(int maxHealth, int damage, int expected)
         {
             _playerHealth.MaxHealth = maxHealth;
-            //_playerHealth.OnEnable();
+            _playerHealth.OnEnable();
 
             _playerHealth.TakeHit(damage);
 

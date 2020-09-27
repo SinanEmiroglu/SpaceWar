@@ -18,7 +18,7 @@ namespace SpaceWar
 
 
         //Visible because of testing purpose.
-        private void OnEnable()
+        public void OnEnable()
         {
             _currentHealth = maxHealth;
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
@@ -39,9 +39,14 @@ namespace SpaceWar
             }
             else
             {
-                _currentHealth = 0;
-                OnDie?.Invoke();
+                Kill();
             }
+        }
+
+        public void Kill()
+        {
+            _currentHealth = 0;
+            OnDie?.Invoke();
         }
 
         public void TakeHeal(int amount)
