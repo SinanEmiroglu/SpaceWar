@@ -1,5 +1,4 @@
 # Space War
-Rovio Code Challenge
 
 **Playable APK:** [Space War](https://drive.google.com/file/d/1LSchbcBFNxCSfCUU7n_-VvB5mjt71vTi/view?usp=sharing)
 
